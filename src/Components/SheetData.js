@@ -6,11 +6,12 @@ const CardWrapper = styled.div`
   flex-wrap: wrap;
   min-height: 100vh;
   min-width: 100vw;
+  margin-left: -12px;
 `;
 
 const RestaurantCard = styled.div`
   background-color: white;
-  margin: 8px 16px 16px 0;
+  margin: 12px;
   width: 300px;
 `;
 
@@ -59,7 +60,8 @@ class SheetData extends Component {
   render() {
     const { data } = this.props;
 
-    if (data === null) return <CardWrapper>loading...</CardWrapper>;
+    if (data === null)
+      return <CardWrapper style={{ margin: "0" }}>loading...</CardWrapper>;
 
     return (
       <CardWrapper>
