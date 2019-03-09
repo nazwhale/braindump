@@ -4,6 +4,8 @@ import styled from "styled-components";
 const CardWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  min-height: 100vh;
+  min-width: 100vw;
 `;
 
 const RestaurantCard = styled.div`
@@ -14,7 +16,8 @@ const RestaurantCard = styled.div`
 
 const CardImage = styled.div`
   width: inherit;
-  height: 180px;
+  min-height: 180px;
+  max-height: 180px;
   overflow: hidden;
 `;
 
@@ -29,22 +32,16 @@ const CardHeader = styled.h5`
 `;
 
 const Restaurant = ({ props }) => {
-  const {
-    name,
-    area,
-    cuisine,
-    meal,
-    price,
-    website,
-    articles,
-    comments,
-    critic,
-    imageUrl
-  } = props;
+  const { name, area, cuisine, meal, price, imageUrl } = props;
+
   return (
     <RestaurantCard>
       <CardImage>
-        <img src={imageUrl} style={{ width: "inherit" }} alt={`${name}`} />
+        <img
+          src={imageUrl}
+          style={{ width: "inherit", height: "inherit" }}
+          alt={`${name}`}
+        />
       </CardImage>
       <CardInfo>
         <CardHeader>{name}</CardHeader>
@@ -61,6 +58,8 @@ const Restaurant = ({ props }) => {
 class SheetData extends Component {
   render() {
     const { data } = this.props;
+
+    if (data === null) return <CardWrapper>loading...</CardWrapper>;
 
     return (
       <CardWrapper>

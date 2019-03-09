@@ -7,8 +7,13 @@ import SheetData from "./Components/SheetData";
 const AppWrapper = styled.div`
   background-color: #f4f7f6;
   padding: 16px 64px;
-  min-height: 100vh;
-  min-width: 100vw;
+`;
+
+const Footer = styled.footer`
+  margin: 32px;
+  text-align: center;
+  text-size: 10px;
+  font-weight: lighter;
 `;
 
 const SPREADSHEET_URL =
@@ -39,10 +44,13 @@ class App extends Component {
     const { data } = this.state;
 
     return (
-      <AppWrapper>
-        <h1>london restaurants</h1>
-        {data === null ? "loading..." : <SheetData data={this.state.data} />}
-      </AppWrapper>
+      <>
+        <AppWrapper>
+          <h1>london restaurants</h1>
+          <SheetData data={data} />
+          <Footer>Curated by Joe, Marie, Caitlin, Rach, Jay, & Naz</Footer>
+        </AppWrapper>
+      </>
     );
   }
 }
