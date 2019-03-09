@@ -14,6 +14,12 @@ const RestaurantCard = styled.div`
   background-color: white;
   margin: 12px;
   width: 300px;
+  overflow: hidden;
+`;
+
+const CardImageWrapper = styled.div`
+  width: 300px;
+  overflow: hidden;
 `;
 
 const CardImage = styled.div`
@@ -21,6 +27,13 @@ const CardImage = styled.div`
   min-height: 180px;
   max-height: 180px;
   overflow: hidden;
+  transition: all 0.5s;
+
+  max-width: 100%;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 const CardInfo = styled.div`
@@ -38,13 +51,15 @@ const Restaurant = ({ props }) => {
 
   return (
     <RestaurantCard>
-      <CardImage>
-        <img
-          src={imageUrl}
-          style={{ width: "inherit", height: "inherit" }}
-          alt={`${name}`}
-        />
-      </CardImage>
+      <CardImageWrapper>
+        <CardImage>
+          <img
+            src={imageUrl}
+            style={{ width: "inherit", height: "inherit" }}
+            alt={`${name}`}
+          />
+        </CardImage>
+      </CardImageWrapper>
       <CardInfo>
         <CardHeader>{name}</CardHeader>
         <p>
