@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { ReactComponent as Link } from "../link.svg";
 
 const CardWrapper = styled.div`
   background-color: white;
@@ -36,6 +37,12 @@ const CardHeader = styled.h5`
   margin: 1em 0;
 `;
 
+const WebsiteLink = props => (
+  <a href={props.website} target="_blank" rel="noopener noreferrer">
+    <Link style={{ height: "16px" }} />
+  </a>
+);
+
 export default class RestaurantCard extends Component {
   render() {
     const {
@@ -44,8 +51,11 @@ export default class RestaurantCard extends Component {
       cuisine,
       meal,
       price,
-      imageUrl
+      imageUrl,
+      website
     } = this.props.restaurant;
+
+    console.log(website);
 
     return (
       <CardWrapper>
@@ -59,7 +69,12 @@ export default class RestaurantCard extends Component {
           </CardImage>
         </CardImageWrapper>
         <CardInfo>
-          <CardHeader>{name}</CardHeader>
+          <CardHeader>
+            {name}{" "}
+            <span style={{ margin: "0 8px" }}>
+              {website !== "" && <WebsiteLink website={website} />}
+            </span>
+          </CardHeader>
           <p>
             {cuisine} ({meal})
           </p>
