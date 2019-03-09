@@ -40,7 +40,7 @@ class App extends Component {
 
     return (
       <AppWrapper>
-        <h1>London restaurants</h1>
+        <h1>london restaurants</h1>
         {data === null ? "loading..." : <SheetData data={this.state.data} />}
       </AppWrapper>
     );
