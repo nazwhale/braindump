@@ -5,7 +5,10 @@ import styled from "styled-components";
 import SheetData from "./Components/SheetData";
 
 const AppWrapper = styled.div`
+  background-color: #f4f7f6;
   padding: 16px 64px;
+  min-height: 100vh;
+  min-width: 100vw;
 `;
 
 const SPREADSHEET_URL =
