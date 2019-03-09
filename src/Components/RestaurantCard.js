@@ -45,17 +45,12 @@ const WebsiteLink = props => (
 
 export default class RestaurantCard extends Component {
   render() {
-    const {
-      name,
-      area,
-      cuisine,
-      meal,
-      price,
-      imageUrl,
-      website
-    } = this.props.restaurant;
+    const { name, area, cuisine, meal, price, website } = this.props.restaurant;
+    let { imageUrl } = this.props.restaurant;
 
-    console.log(website);
+    if (imageUrl === "") {
+      imageUrl = "https://fakeimg.pl/300x180";
+    }
 
     return (
       <CardWrapper>
