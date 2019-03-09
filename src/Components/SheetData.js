@@ -43,7 +43,7 @@ const CardInfo = styled.div`
 
 const CardHeader = styled.h5`
   font-size: 14px;
-  padding-bottom: 0;
+  margin: 1em 0;
 `;
 
 const Restaurant = ({ props }) => {
