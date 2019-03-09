@@ -37,7 +37,7 @@ const CardImage = styled.div`
 `;
 
 const CardInfo = styled.div`
-  padding: 0 16px;
+  padding: 8px 16px;
   font-size: 14px;
 `;
 
