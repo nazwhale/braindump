@@ -18,6 +18,11 @@ class SheetData extends Component {
     if (data === null)
       return <CardWrapper style={{ margin: "0" }}>loading...</CardWrapper>;
 
+    // randomise order every time
+    data.sort(function(a, b) {
+      return 0.5 - Math.random();
+    });
+
     return (
       <CardWrapper>
         {data.map(row => {
