@@ -5,8 +5,9 @@ const CardWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   min-height: 100vh;
-  min-width: 100vw;
+  max-width: 100%;
   margin-left: -12px;
+  margin-right: -12px;
 `;
 
 const RestaurantCard = styled.div`
