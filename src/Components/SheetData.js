@@ -2,6 +2,16 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import RestaurantCard from "./RestaurantCard";
 
+const SearchInput = styled.input`
+  margin: 0 0 1rem 0;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid grey;
+  background-color: inherit;
+  font-size: 16px;
+  color: grey;
+`;
+
 const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 300px);
@@ -12,23 +22,51 @@ const CardWrapper = styled.div`
 `;
 
 class SheetData extends Component {
-  render() {
+  state = {
+    searchTerm: ""
+  };
+
+  searchFilter = () => {
+    let arr = [];
     const { data } = this.props;
+    for (let i = 0; i < data.length - 1; i++) {
+      if (data[i]["name"].toLowerCase().includes(this.state.searchTerm)) {
+        arr.push(data[i]);
+      }
+    }
+
+    return arr;
+  };
+
+  render() {
+    let { data } = this.props;
 
     if (data === null)
-      return <CardWrapper style={{ margin: "0" }}>loading...</CardWrapper>;
+      return (
+        <CardWrapper style={{ margin: "0", color: "grey" }}>
+          loading...
+        </CardWrapper>
+      );
 
     // randomise order every time
     data.sort(function(a, b) {
       return 0.5 - Math.random();
     });
 
+    data = this.searchFilter();
+
     return (
-      <CardWrapper>
-        {data.map(row => {
-          return <RestaurantCard restaurant={row} key={row.name} />;
-        })}
-      </CardWrapper>
+      <>
+        <SearchInput
+          placeholder="search something..."
+          onChange={e => this.setState({ searchTerm: e.target.value })}
+        />
+        <CardWrapper>
+          {data.map(row => {
+            return <RestaurantCard restaurant={row} key={row.id} />;
+          })}
+        </CardWrapper>
+      </>
     );
   }
 }
