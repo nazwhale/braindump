@@ -69,7 +69,9 @@ class SheetData extends Component {
       <>
         <SearchInput
           placeholder="search something"
-          onChange={e => this.setState({ searchTerm: e.target.value })}
+          onChange={e =>
+            this.setState({ searchTerm: e.target.value.toLowerCase() })
+          }
         />
         <CardWrapper>
           {data.map(row => {
