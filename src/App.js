@@ -14,6 +14,7 @@ const Footer = styled.footer`
   text-align: center;
   text-size: 10px;
   font-weight: lighter;
+  color: #a6a2a2;
 `;
 
 const SPREADSHEET_URL =
