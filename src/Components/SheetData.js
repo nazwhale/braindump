@@ -15,6 +15,10 @@ const SearchInput = styled.input`
   &::placeholder {
     color: #a6a2a2;
   }
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 const CardWrapper = styled.div`
