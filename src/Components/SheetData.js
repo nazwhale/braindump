@@ -3,7 +3,7 @@ import styled from "styled-components";
 import RestaurantCard from "./RestaurantCard";
 
 const SearchInput = styled.input`
-  margin: -8px 0 1rem 0;
+  margin: -8px 0 1.5rem 0;
   width: 300px;
   border: none;
   border-bottom: 0.5px solid #a6a2a2;
@@ -20,6 +20,7 @@ const SearchInput = styled.input`
 const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 300px);
+  grid-template-rows: minmax(auto, max-content);
   grid-gap: 1.5rem;
 
   min-height: 100vh;
