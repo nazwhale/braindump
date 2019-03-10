@@ -3,13 +3,18 @@ import styled from "styled-components";
 import RestaurantCard from "./RestaurantCard";
 
 const SearchInput = styled.input`
-  margin: 0 0 1rem 0;
+  margin: -8px 0 1rem 0;
   width: 300px;
   border: none;
-  border-bottom: 1px solid grey;
+  border-bottom: 0.5px solid #a6a2a2;
+  padding: 8px 0;
   background-color: inherit;
   font-size: 16px;
-  color: grey;
+  color: #a6a2a2;
+
+  &::placeholder {
+    color: #a6a2a2;
+  }
 `;
 
 const CardWrapper = styled.div`
@@ -43,7 +48,7 @@ class SheetData extends Component {
 
     if (data === null)
       return (
-        <CardWrapper style={{ margin: "0", color: "grey" }}>
+        <CardWrapper style={{ margin: "0", color: "#A6A2A2" }}>
           loading...
         </CardWrapper>
       );
@@ -58,7 +63,7 @@ class SheetData extends Component {
     return (
       <>
         <SearchInput
-          placeholder="search something..."
+          placeholder="search something"
           onChange={e => this.setState({ searchTerm: e.target.value })}
         />
         <CardWrapper>
