@@ -61,7 +61,8 @@ export default class ClassCard extends Component {
     let { imageUrl } = this.props.restaurant;
 
     if (imageUrl === "") {
-      imageUrl = "https://i.ytimg.com/vi/q5EUGWhUtmw/maxresdefault.jpg";
+      imageUrl =
+        "https://cdn-az.allevents.in/events4/banners/08cdaaf2e6ca566f337d29d85531cbcf7b5f69aac6d8ba1a6237724303a83c4f-rimg-w506-h320-gmir.jpg?v=1578017579";
     }
 
     return (
