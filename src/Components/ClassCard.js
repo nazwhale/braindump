@@ -48,15 +48,19 @@ export default class ClassCard extends Component {
     const {
       name,
       area,
+      style,
+      variant,
       level,
+      dayOfWeek,
       teacher,
       price,
+      time,
       website
     } = this.props.restaurant;
     let { imageUrl } = this.props.restaurant;
 
     if (imageUrl === "") {
-      imageUrl = "https://fakeimg.pl/300x180";
+      imageUrl = "https://i.ytimg.com/vi/q5EUGWhUtmw/maxresdefault.jpg";
     }
 
     return (
@@ -72,14 +76,17 @@ export default class ClassCard extends Component {
         </CardImageWrapper>
         <CardInfo>
           <CardHeader>
-            {name}{" "}
+            {`${dayOfWeek}s`} with {teacher}
             <span style={{ margin: "0 8px" }}>
               {website !== "" && <WebsiteLink website={website} />}
             </span>
           </CardHeader>
           <p>{area}</p>
           <p>{level}</p>
-          <p>{teacher}</p>
+          <p>
+            {style} {variant}
+          </p>
+          <p>{time}</p>
           <p>£{price}</p>
         </CardInfo>
       </CardWrapper>

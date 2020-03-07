@@ -40,7 +40,7 @@ class SheetData extends Component {
     let arr = [];
     const { data } = this.props;
     for (let i = 0; i < data.length - 1; i++) {
-      if (data[i]["name"].toLowerCase().includes(this.state.searchTerm)) {
+      if (data[i]["teacher"].toLowerCase().includes(this.state.searchTerm)) {
         arr.push(data[i]);
       }
     }
@@ -58,10 +58,12 @@ class SheetData extends Component {
         </CardWrapper>
       );
 
-    // randomise order every time
+    // TODO: sort by weekday
     data.sort(function(a, b) {
       return 0.5 - Math.random();
     });
+
+    // TODO: add searching by different things
 
     data = this.searchFilter();
 
