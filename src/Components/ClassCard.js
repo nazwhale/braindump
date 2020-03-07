@@ -6,6 +6,7 @@ const CardWrapper = styled.div`
   background-color: white;
   width: 300px;
   overflow: hidden;
+  border-radius: 15px;
 `;
 
 const CardImageWrapper = styled.div`
