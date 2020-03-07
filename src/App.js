@@ -9,6 +9,11 @@ const AppWrapper = styled.div`
   padding: 16px 64px;
 `;
 
+const SpotifyPlaylist = styled.footer`
+  margin: 32px;
+  text-align: center;
+`;
+
 const Footer = styled.footer`
   margin: 32px;
   text-align: center;
@@ -52,6 +57,17 @@ class App extends Component {
             <em>¡bachateame!</em>
           </h4>
           <SheetData data={data} />
+          <SpotifyPlaylist>
+            <iframe
+              title="Bachata Dominicana playlist"
+              src="https://open.spotify.com/embed/playlist/1cJwzWFzrVo0n0uSqULp1h"
+              width="300"
+              height="80"
+              frameborder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            />
+          </SpotifyPlaylist>
           <Footer>💃🕺</Footer>
         </AppWrapper>
       </>
