@@ -47,7 +47,7 @@ class App extends Component {
     return (
       <>
         <AppWrapper>
-          <h1>💃Edinburgh Bachata classes</h1>
+          <h1>💃Edinburgh Bachata</h1>
           <h4>
             <em>¡bachateame!</em>
           </h4>
