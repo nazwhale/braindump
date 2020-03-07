@@ -18,7 +18,7 @@ const Footer = styled.footer`
 `;
 
 const SPREADSHEET_URL =
-  "https://docs.google.com/spreadsheets/d/1nhUo0SXzfVKOnwVJ91wk2gG6fhDr9eAXNhZhkQDP4Ig/edit?usp=sharing";
+  "https://docs.google.com/spreadsheets/d/1ao5cYkEa-ldxSvtrrt6ctCsPcG9F1yFrYOqLH4fPaaQ/edit?usp=sharing";
 
 class App extends Component {
   state = {
@@ -47,9 +47,9 @@ class App extends Component {
     return (
       <>
         <AppWrapper>
-          <h1>london restaurants</h1>
+          <h1>Edinburgh dance classes</h1>
           <SheetData data={data} />
-          <Footer>Curated by Joe, Marie, Caitlin, Rach, Jay, & Naz</Footer>
+          <Footer>💃🕺</Footer>
         </AppWrapper>
       </>
     );

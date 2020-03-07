@@ -43,9 +43,16 @@ const WebsiteLink = props => (
   </a>
 );
 
-export default class RestaurantCard extends Component {
+export default class ClassCard extends Component {
   render() {
-    const { name, area, cuisine, meal, price, website } = this.props.restaurant;
+    const {
+      name,
+      area,
+      level,
+      teacher,
+      price,
+      website
+    } = this.props.restaurant;
     let { imageUrl } = this.props.restaurant;
 
     if (imageUrl === "") {
@@ -70,10 +77,9 @@ export default class RestaurantCard extends Component {
               {website !== "" && <WebsiteLink website={website} />}
             </span>
           </CardHeader>
-          <p>
-            {cuisine} ({meal})
-          </p>
           <p>{area}</p>
+          <p>{level}</p>
+          <p>{teacher}</p>
           <p>£{price}</p>
         </CardInfo>
       </CardWrapper>

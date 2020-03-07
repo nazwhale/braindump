@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import RestaurantCard from "./RestaurantCard";
+import ClassCard from "./ClassCard";
 
 const SearchInput = styled.input`
   margin: -8px 0 1.5rem 0;
@@ -75,7 +75,7 @@ class SheetData extends Component {
         />
         <CardWrapper>
           {data.map(row => {
-            return <RestaurantCard restaurant={row} key={row.id} />;
+            return <ClassCard restaurant={row} key={row.id} />;
           })}
         </CardWrapper>
       </>
