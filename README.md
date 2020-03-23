@@ -1,3 +1,13 @@
+# 🧠
+
+1. Make react app with a markdown editor ✅
+2. Write to a database when user stops typing for x seconds
+3. Login
+4. New blank page every day at 2am
+5. View past braindumps
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,4 +76,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
 # restaurant-guide
